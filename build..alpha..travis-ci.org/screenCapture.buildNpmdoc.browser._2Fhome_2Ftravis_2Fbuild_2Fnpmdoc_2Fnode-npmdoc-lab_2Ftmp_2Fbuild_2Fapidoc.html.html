@@ -1,0 +1,1276 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/hapijs/lab#readme">lab (v13.0.1)</a>
+</h1>
+<h4>Test utility</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lab">module lab</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.execute">
+            function <span class="apidocSignatureSpan">lab.</span>execute
+            <span class="apidocSignatureSpan">(scripts, options, reporter, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.report">
+            function <span class="apidocSignatureSpan">lab.</span>report
+            <span class="apidocSignatureSpan">(scripts, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.script">
+            function <span class="apidocSignatureSpan">lab.</span>script
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lab.</span>assertions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lab.</span>coverage</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lab.</span>leaks</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lab.</span>lint</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lab.</span>runner</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lab.</span>transform</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lab.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lab.coverage">module lab.coverage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.coverage.analyze">
+            function <span class="apidocSignatureSpan">lab.coverage.</span>analyze
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.coverage.instrument">
+            function <span class="apidocSignatureSpan">lab.coverage.</span>instrument
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lab.leaks">module lab.leaks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.leaks.detect">
+            function <span class="apidocSignatureSpan">lab.leaks.</span>detect
+            <span class="apidocSignatureSpan">(customGlobals)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lab.lint">module lab.lint</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.lint.lint">
+            function <span class="apidocSignatureSpan">lab.</span>lint
+            <span class="apidocSignatureSpan">(settings, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lab.runner">module lab.runner</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.runner.execute">
+            function <span class="apidocSignatureSpan">lab.runner.</span>execute
+            <span class="apidocSignatureSpan">(scripts, options, reporter, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.runner.report">
+            function <span class="apidocSignatureSpan">lab.runner.</span>report
+            <span class="apidocSignatureSpan">(scripts, options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lab.transform">module lab.transform</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.transform.transform">
+            function <span class="apidocSignatureSpan">lab.</span>transform
+            <span class="apidocSignatureSpan">(filename, content)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.transform.install">
+            function <span class="apidocSignatureSpan">lab.transform.</span>install
+            <span class="apidocSignatureSpan">(settings, primeFn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.transform.retrieveFile">
+            function <span class="apidocSignatureSpan">lab.transform.</span>retrieveFile
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lab.utils">module lab.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.utils.applyOptions">
+            function <span class="apidocSignatureSpan">lab.utils.</span>applyOptions
+            <span class="apidocSignatureSpan">(parent, child)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lab.utils.mergeOptions">
+            function <span class="apidocSignatureSpan">lab.utils.</span>mergeOptions
+            <span class="apidocSignatureSpan">(parent, child, ignore)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lab" id="apidoc.module.lab">module lab</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lab.execute" id="apidoc.element.lab.execute">
+        function <span class="apidocSignatureSpan">lab.</span>execute
+        <span class="apidocSignatureSpan">(scripts, options, reporter, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execute = function (scripts, options, reporter, callback) {
+
+    const settings = Utils.mergeOptions(internals.defaults, options);
+
+    scripts = [].concat(scripts);
+
+    if (settings.shuffle) {
+        internals.shuffle(scripts, settings.seed);
+    }
+
+    const experiments = scripts.map((script) =&gt; {
+
+        script._executed = true;
+        return script._root;
+    });
+
+    const onlyNodes = Hoek.flatten(scripts.map((script) =&gt; script._onlyNodes));
+    if (onlyNodes.length &gt; 1) {
+        const paths = onlyNodes.map((onlyNode) =&gt; {
+
+            if (onlyNode.test) {
+                return `Test: ${onlyNode.test.title}`;
+            }
+            return `Experiment: ${onlyNode.path}`;
+        });
+        return callback(new Error('Multiple tests are marked as "only":\n\t' + paths.join('\n\t')));
+    }
+
+    const onlyNode = onlyNodes[0];
+    if (onlyNode) {
+        internals.skipAllButOnly(scripts, onlyNode);
+    }
+
+    reporter = reporter || { test: function () { }, start: function () { } };
+
+    if (settings.environment) {
+        process.env.NODE_ENV = settings.environment;
+    }
+
+    const filters = {
+        ids: settings.ids,
+        grep: settings.grep ? new RegExp(settings.grep) : null
+    };
+
+    const count = internals.count(experiments, { filters });        // Sets test.id
+    reporter.start({ count });
+
+    const startTime = Date.now();
+    const state = {
+        report: {
+            tests: [],
+            failures: 0,
+            errors: []
+        },
+        reporter,
+        filters,
+        options: settings,
+        only: onlyNode
+    };
+
+    // Instantiate common lazily loaded items that can leak domains.
+    internals.loadLazyObjects();
+
+    internals.executeExperiments(experiments, state, settings.dry, () =&gt; {
+
+        const notebook = {
+            ms: Date.now() - startTime,
+            tests: state.report.tests,
+            failures: state.report.failures,
+            errors: state.report.errors
+        };
+
+        return callback(null, notebook);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    const settings = Utils.mergeOptions(internals.defaults, options);
+    settings.environment = settings.environment.trim();
+    const reporter = Reporters.generate(settings);
+
+    const executeScripts = function (next) {
+
+exports.<span class="apidocCodeKeywordSpan">execute</span>(scripts, settings, reporter, (err, result) =&gt; {
+    // Can only be (and is) covererd via CLI tests
+    /* $lab:coverage:off$ */
+    if (err) {
+        const outputStream = [].concat(options.output).find((output) =&gt; !!output.write);
+        if (outputStream) {
+            outputStream.write(err.toString() + '\n');
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lab.report" id="apidoc.element.lab.report">
+        function <span class="apidocSignatureSpan">lab.</span>report
+        <span class="apidocSignatureSpan">(scripts, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">report = function (scripts, options, callback) {
+
+    const settings = Utils.mergeOptions(internals.defaults, options);
+    settings.environment = settings.environment.trim();
+    const reporter = Reporters.generate(settings);
+
+    const executeScripts = function (next) {
+
+        exports.execute(scripts, settings, reporter, (err, result) =&gt; {
+            // Can only be (and is) covererd via CLI tests
+<span class="apidocCodeCommentSpan">            /* $lab:coverage:off$ */
+</span>            if (err) {
+                const outputStream = [].concat(options.output).find((output) =&gt; !!output.write);
+                if (outputStream) {
+                    outputStream.write(err.toString() + '\n');
+                }
+                else {
+                    console.error(err.toString());
+                }
+                return process.exit(1);
+            }
+            /* $lab:coverage:on$ */
+
+            if (settings.leaks) {
+                result.leaks = Leaks.detect(settings.globals);
+            }
+
+            if (settings.coverage) {
+                result.coverage = Coverage.analyze(settings);
+            }
+
+            if (settings.shuffle) {
+                result.seed = settings.seed;
+                result.shuffle = true;
+            }
+
+            return next(null, result);
+        });
+    };
+
+    const executeLint = function (next) {
+
+        if (!settings.lint) {
+            return next();
+        }
+
+        Linters.lint(settings, next);
+    };
+
+    Items.parallel.execute({ notebook: executeScripts, lint: executeLint }, (ignoreErr, results) =&gt; {
+
+        const notebook = results.notebook;
+        notebook.lint = results.lint;
+
+        if (settings.assert) {
+            notebook.assertions = settings.assert.count &amp;&amp; settings.assert.count();
+            const incompletes = settings.assert.incomplete &amp;&amp; settings.assert.incomplete();
+            if (incompletes) {
+                for (let i = 0; i &lt; incompletes.length; ++i) {
+                    const error = new Error('Incomplete assertion at ' + incompletes[i]);
+                    error.stack = undefined;
+                    notebook.errors.push(error);
+                }
+            }
+        }
+
+        return reporter.finalize(notebook, callback);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lab.script" id="apidoc.element.lab.script">
+        function <span class="apidocSignatureSpan">lab.</span>script
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">script = function (options) {
+
+    options = options || {};
+
+    global._labScriptRun = true;                                        // Compared by CLI to detect missing exports.lab
+
+    const script = {
+        _current: {
+            experiments: [],
+            tests: [],
+            options: {},
+            title: 'script'
+        },
+        _titles: [],
+        _path: [],
+        _count: 0,
+        _executed: false,
+        _onlyNodes: [],
+        _cli: options.cli,
+        setOnly: function (experiment, test, path) {
+
+            this._onlyNodes.push({ experiment, test, path });
+        }
+    };
+
+    script._root = script._current;
+
+    script.experiment = internals.experiment.bind(script);
+    script.experiment.skip = internals.skip(script, 'experiment');
+    script.experiment.only = internals.only(script, 'experiment');
+    script.describe = script.experiment;
+    script.suite = script.experiment;
+
+    script.test = internals.test.bind(script);
+    script.test.skip = internals.skip(script, 'test');
+    script.test.only = internals.only(script, 'test');
+    script.it = script.test;
+
+    script.before = internals.before.bind(script);
+    script.beforeEach = internals.beforeEach.bind(script);
+    script.after = internals.after.bind(script);
+    script.afterEach = internals.afterEach.bind(script);
+
+    if (options.schedule !== false) {                   // Defaults to true
+        setImmediate(() =&gt; {
+
+            if (!script._executed) {
+                Runner.report(script, options);         // Schedule automatic execution when used without the CLI
+            }
+        });
+    }
+
+    return script;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+$ lab unit.js
+```
+
+Test files must require the **lab** module, and export a test script:
+```javascript
+const Code = require('code');   // assertion library
+const Lab = require('lab');
+const lab = exports.lab = Lab.<span class="apidocCodeKeywordSpan">script</span>();
+
+lab.test('returns true when 1 + 1 equals 2', (done) =&gt; {
+
+    Code.expect(1 + 1).to.equal(2);
+    done();
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lab.coverage" id="apidoc.module.lab.coverage">module lab.coverage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lab.coverage.analyze" id="apidoc.element.lab.coverage.analyze">
+        function <span class="apidocSignatureSpan">lab.coverage.</span>analyze
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">analyze = function (options) {
+
+    // Process coverage  (global.__$$labCov needed when labCov isn't defined)
+
+<span class="apidocCodeCommentSpan">    /* $lab:coverage:off$ */ const report = global.__$$labCov || { files: {} }; /* $lab:coverage:on$ */
+</span>    const pattern = internals.pattern(options);
+
+    const cov = {
+        sloc: 0,
+        hits: 0,
+        misses: 0,
+        percent: 0,
+        files: []
+    };
+
+    // Filter files
+
+    const files = Object.keys(report.files);
+    for (let i = 0; i &lt; files.length; ++i) {
+        const filename = files[i];
+        if (pattern.test(filename)) {
+            report.files[filename].source = internals.sources[filename] || [];
+            const data = internals.file(filename, report.files[filename], options);
+
+            cov.files.push(data);
+            cov.hits += data.hits;
+            cov.misses += data.misses;
+            cov.sloc += data.sloc;
+        }
+    }
+
+    // Sort files based on directory structure
+
+    cov.files.sort((a, b) =&gt; {
+
+        const segmentsA = a.filename.split('/');
+        const segmentsB = b.filename.split('/');
+
+        const al = segmentsA.length;
+        const bl = segmentsB.length;
+
+        for (let i = 0; i &lt; al &amp;&amp; i &lt; bl; ++i) {
+
+            if (segmentsA[i] === segmentsB[i]) {
+                continue;
+            }
+
+            const lastA = i + 1 === al;
+            const lastB = i + 1 === bl;
+
+            if (lastA !== lastB) {
+                return lastA ? -1 : 1;
+            }
+
+            return segmentsA[i] &lt; segmentsB[i] ? -1 : 1;
+        }
+
+        return segmentsA.length &lt; segmentsB.length ? -1 : 1;
+    });
+
+    // Calculate coverage percentage
+
+    if (cov.sloc &gt; 0) {
+        cov.percent = (cov.hits / cov.sloc) * 100;
+    }
+
+    return cov;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/* $lab:coverage:on$ */
+
+if (settings.leaks) {
+    result.leaks = Leaks.detect(settings.globals);
+}
+
+if (settings.coverage) {
+    result.coverage = Coverage.<span class="apidocCodeKeywordSpan">analyze</span>(settings);
+}
+
+if (settings.shuffle) {
+    result.seed = settings.seed;
+    result.shuffle = true;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lab.coverage.instrument" id="apidoc.element.lab.coverage.instrument">
+        function <span class="apidocSignatureSpan">lab.coverage.</span>instrument
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">instrument = function (options) {
+
+    internals.patterns.unshift(internals.pattern(options));
+
+    Transform.install(options, internals.prime);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lab.leaks" id="apidoc.module.lab.leaks">module lab.leaks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lab.leaks.detect" id="apidoc.element.lab.leaks.detect">
+        function <span class="apidocSignatureSpan">lab.leaks.</span>detect
+        <span class="apidocSignatureSpan">(customGlobals)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">detect = function (customGlobals) {
+
+    const whitelist = {
+        _labScriptRun: true,                // Lab global to detect script executions
+
+        // Enumerable globals
+        setTimeout: true,
+        setInterval: true,
+        setImmediate: true,
+        clearTimeout: true,
+        clearInterval: true,
+        clearImmediate: true,
+        console: true,
+        Buffer: true,
+        process: true,
+        global: true,
+        GLOBAL: true,
+        root: true,
+        constructor: true,
+        ArrayBuffer: true,
+        Int8Array: true,
+        Uint8Array: true,
+        Uint8ClampedArray: true,
+        Int16Array: true,
+        Uint16Array: true,
+        Int32Array: true,
+        Uint32Array: true,
+        Float32Array: true,
+        Float64Array: true,
+        DataView: true,
+        __$$labCov: true,
+        gc: true,
+
+        // Non-Enumerable globals
+        Array: true,
+        isNaN: true,
+        ReferenceError: true,
+        Number: true,
+        RangeError: true,
+        EvalError: true,
+        Function: true,
+        isFinite: true,
+        Object: true,
+        undefined: true,
+        Date: true,
+        SyntaxError: true,
+        String: true,
+        eval: true,
+        parseFloat: true,
+        unescape: true,
+        Error: true,
+        encodeURI: true,
+        NaN: true,
+        RegExp: true,
+        encodeURIComponent: true,
+        Math: true,
+        decodeURI: true,
+        parseInt: true,
+        Infinity: true,
+        escape: true,
+        decodeURIComponent: true,
+        JSON: true,
+        TypeError: true,
+        URIError: true,
+        Boolean: true,
+        Intl: true,
+        Map: true,
+        Promise: true,
+        Set: true,
+        Symbol: true,
+        WeakMap: true,
+        WeakSet: true
+    };
+
+    if (customGlobals) {
+        for (let i = 0; i &lt; customGlobals.length; ++i) {
+            whitelist[customGlobals[i]] = true;
+        }
+    }
+
+    if (global.Proxy) {
+        whitelist.Proxy = true;
+    }
+
+    if (global.Reflect) {
+        whitelist.Reflect = true;
+    }
+
+    if (global.DTRACE_HTTP_SERVER_RESPONSE) {
+        whitelist.DTRACE_HTTP_SERVER_RESPONSE = true;
+        whitelist.DTRACE_HTTP_SERVER_REQUEST = true;
+        whitelist.DTRACE_HTTP_CLIENT_RESPONSE = true;
+        whitelist.DTRACE_HTTP_CLIENT_REQUEST = true;
+        whitelist.DTRACE_NET_STREAM_END = true;
+        whitelist.DTRACE_NET_SERVER_CONNECTION = true;
+        whitelist.DTRACE_NET_SOCKET_READ = true;
+        whitelist.DTRACE_NET_SOCKET_WRITE = true;
+    }
+
+    if (global.COUNTER_NET_SERVER_CONNECTION) {
+        whitelist.COUNTER_NET_SERVER_CONNECTION = true;
+        whitelist.COUNTER_NET_SERVER_CONNECTION_CLOSE = true;
+        whitelist.COUNTER_HTTP_SERVER_REQUEST = true;
+        whitelist.COUNTER_HTTP_SERVER_RESPONSE = true;
+        whitelist.COUNTER_HTTP_CLIENT_REQUEST = true;
+        whitelist.COUNTER_HTTP_CLIENT_RESPONSE = true;
+    }
+
+    const leaks = [];
+    const globals = Object.getOwnPropertyNames(global);
+    for (let i = 0; i &lt; globals.length; ++i) {
+        if (!whitelist[globals[i]] &amp;&amp;
+            global[globals[i]] !== global) {
+
+            leaks.push(globals[i]);
+        }
+    }
+
+    return leaks;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        console.error(err.toString());
+    }
+    return process.exit(1);
+}
+/* $lab:coverage:on$ */
+
+if (settings.leaks) {
+    result.leaks = Leaks.<span class="apidocCodeKeywordSpan">detect</span>(settings.globals);
+}
+
+if (settings.coverage) {
+    result.coverage = Coverage.analyze(settings);
+}
+
+if (settings.shuffle) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lab.lint" id="apidoc.module.lab.lint">module lab.lint</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lab.lint.lint" id="apidoc.element.lab.lint.lint">
+        function <span class="apidocSignatureSpan">lab.</span>lint
+        <span class="apidocSignatureSpan">(settings, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lint = function (settings, callback) {
+
+    const linterPath = (settings.linter &amp;&amp; settings.linter !== 'eslint') ? settings.linter : internals.linter;
+
+    let linterOptions;
+
+    try {
+        linterOptions = JSON.parse(settings['lint-options'] || '{}');
+    }
+    catch (err) {
+        throw new Error('lint-options could not be parsed');
+    }
+
+    linterOptions.fix = settings['lint-fix'];
+
+    const child = ChildProcess.fork(linterPath, [JSON.stringify(linterOptions)], { cwd: settings.lintingPath });
+    child.once('message', (message) =&gt; {
+
+        child.kill();
+
+        const result = { lint: message, totalErrors: 0, totalWarnings: 0 };
+
+        result.lint.forEach((lint) =&gt; {
+
+            let errors = 0;
+            let warnings = 0;
+
+            lint.errors.forEach((err) =&gt; {
+
+                if (err.severity === 'ERROR') {
+                    errors++;
+                }
+                else {
+                    warnings++;
+                }
+            });
+
+            lint.totalErrors = errors;
+            lint.totalWarnings = warnings;
+            result.totalErrors += errors;
+            result.totalWarnings += warnings;
+
+            if (lint.fix) {
+                Fs.writeFileSync(lint.filename, lint.fix.output);
+            }
+        });
+
+        result.total = result.totalErrors + result.totalWarnings;
+
+        return callback(null, result);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    const executeLint = function (next) {
+
+if (!settings.lint) {
+    return next();
+}
+
+Linters.<span class="apidocCodeKeywordSpan">lint</span>(settings, next);
+    };
+
+    Items.parallel.execute({ notebook: executeScripts, lint: executeLint }, (ignoreErr, results) =&gt; {
+
+const notebook = results.notebook;
+notebook.lint = results.lint;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lab.runner" id="apidoc.module.lab.runner">module lab.runner</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lab.runner.execute" id="apidoc.element.lab.runner.execute">
+        function <span class="apidocSignatureSpan">lab.runner.</span>execute
+        <span class="apidocSignatureSpan">(scripts, options, reporter, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execute = function (scripts, options, reporter, callback) {
+
+    const settings = Utils.mergeOptions(internals.defaults, options);
+
+    scripts = [].concat(scripts);
+
+    if (settings.shuffle) {
+        internals.shuffle(scripts, settings.seed);
+    }
+
+    const experiments = scripts.map((script) =&gt; {
+
+        script._executed = true;
+        return script._root;
+    });
+
+    const onlyNodes = Hoek.flatten(scripts.map((script) =&gt; script._onlyNodes));
+    if (onlyNodes.length &gt; 1) {
+        const paths = onlyNodes.map((onlyNode) =&gt; {
+
+            if (onlyNode.test) {
+                return `Test: ${onlyNode.test.title}`;
+            }
+            return `Experiment: ${onlyNode.path}`;
+        });
+        return callback(new Error('Multiple tests are marked as "only":\n\t' + paths.join('\n\t')));
+    }
+
+    const onlyNode = onlyNodes[0];
+    if (onlyNode) {
+        internals.skipAllButOnly(scripts, onlyNode);
+    }
+
+    reporter = reporter || { test: function () { }, start: function () { } };
+
+    if (settings.environment) {
+        process.env.NODE_ENV = settings.environment;
+    }
+
+    const filters = {
+        ids: settings.ids,
+        grep: settings.grep ? new RegExp(settings.grep) : null
+    };
+
+    const count = internals.count(experiments, { filters });        // Sets test.id
+    reporter.start({ count });
+
+    const startTime = Date.now();
+    const state = {
+        report: {
+            tests: [],
+            failures: 0,
+            errors: []
+        },
+        reporter,
+        filters,
+        options: settings,
+        only: onlyNode
+    };
+
+    // Instantiate common lazily loaded items that can leak domains.
+    internals.loadLazyObjects();
+
+    internals.executeExperiments(experiments, state, settings.dry, () =&gt; {
+
+        const notebook = {
+            ms: Date.now() - startTime,
+            tests: state.report.tests,
+            failures: state.report.failures,
+            errors: state.report.errors
+        };
+
+        return callback(null, notebook);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    const settings = Utils.mergeOptions(internals.defaults, options);
+    settings.environment = settings.environment.trim();
+    const reporter = Reporters.generate(settings);
+
+    const executeScripts = function (next) {
+
+exports.<span class="apidocCodeKeywordSpan">execute</span>(scripts, settings, reporter, (err, result) =&gt; {
+    // Can only be (and is) covererd via CLI tests
+    /* $lab:coverage:off$ */
+    if (err) {
+        const outputStream = [].concat(options.output).find((output) =&gt; !!output.write);
+        if (outputStream) {
+            outputStream.write(err.toString() + '\n');
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lab.runner.report" id="apidoc.element.lab.runner.report">
+        function <span class="apidocSignatureSpan">lab.runner.</span>report
+        <span class="apidocSignatureSpan">(scripts, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">report = function (scripts, options, callback) {
+
+    const settings = Utils.mergeOptions(internals.defaults, options);
+    settings.environment = settings.environment.trim();
+    const reporter = Reporters.generate(settings);
+
+    const executeScripts = function (next) {
+
+        exports.execute(scripts, settings, reporter, (err, result) =&gt; {
+            // Can only be (and is) covererd via CLI tests
+<span class="apidocCodeCommentSpan">            /* $lab:coverage:off$ */
+</span>            if (err) {
+                const outputStream = [].concat(options.output).find((output) =&gt; !!output.write);
+                if (outputStream) {
+                    outputStream.write(err.toString() + '\n');
+                }
+                else {
+                    console.error(err.toString());
+                }
+                return process.exit(1);
+            }
+            /* $lab:coverage:on$ */
+
+            if (settings.leaks) {
+                result.leaks = Leaks.detect(settings.globals);
+            }
+
+            if (settings.coverage) {
+                result.coverage = Coverage.analyze(settings);
+            }
+
+            if (settings.shuffle) {
+                result.seed = settings.seed;
+                result.shuffle = true;
+            }
+
+            return next(null, result);
+        });
+    };
+
+    const executeLint = function (next) {
+
+        if (!settings.lint) {
+            return next();
+        }
+
+        Linters.lint(settings, next);
+    };
+
+    Items.parallel.execute({ notebook: executeScripts, lint: executeLint }, (ignoreErr, results) =&gt; {
+
+        const notebook = results.notebook;
+        notebook.lint = results.lint;
+
+        if (settings.assert) {
+            notebook.assertions = settings.assert.count &amp;&amp; settings.assert.count();
+            const incompletes = settings.assert.incomplete &amp;&amp; settings.assert.incomplete();
+            if (incompletes) {
+                for (let i = 0; i &lt; incompletes.length; ++i) {
+                    const error = new Error('Incomplete assertion at ' + incompletes[i]);
+                    error.stack = undefined;
+                    notebook.errors.push(error);
+                }
+            }
+        }
+
+        return reporter.finalize(notebook, callback);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lab.transform" id="apidoc.module.lab.transform">module lab.transform</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lab.transform.transform" id="apidoc.element.lab.transform.transform">
+        function <span class="apidocSignatureSpan">lab.</span>transform
+        <span class="apidocSignatureSpan">(filename, content)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transform = function (filename, content) {
+
+    let ext = '';
+    let transform = null;
+
+    internals.transforms.forEach((element) =&gt; {
+
+        ext = element.ext;
+        if (filename.indexOf(ext, filename.length - ext.length) !== -1) {
+            transform = element.transform;
+        }
+    });
+
+    const relativeFilename = filename.substr(process.cwd().length + 1);
+    internals.fileCache[relativeFilename] = (typeof transform === 'function') ? transform(content, relativeFilename) : content;
+    return internals.fileCache[relativeFilename];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const Btoa = require('btoa');
+
+module.exports = [
+{ ext: '.js', transform: (content, filename) =&gt; {
+
+    // Make sure to only transform your code or the dependencies you want
+    if (filename.indexOf('node_modules') === -1) {
+        const result = Babel.<span class="apidocCodeKeywordSpan">transform</span>(content, { sourceMap: 'inline', filename
+, sourceFileName: filename });
+        return result.code;
+    }
+
+    return content;
+} },
+{ ext: '.coffee', transform: (content, filename) =&gt; {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lab.transform.install" id="apidoc.element.lab.transform.install">
+        function <span class="apidocSignatureSpan">lab.transform.</span>install
+        <span class="apidocSignatureSpan">(settings, primeFn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">install = function (settings, primeFn) {
+
+    if (Array.isArray(settings.transform)) {
+        settings.transform.forEach((element) =&gt; {
+
+            if (element.ext === '.js') {
+                internals.transforms[0].transform = element.transform;
+            }
+            else {
+                internals.transforms.push(element);
+            }
+        });
+    }
+
+    if (typeof primeFn !== 'function') {
+        primeFn = internals.prime;
+    }
+
+    internals.transforms.forEach((transform) =&gt; {
+
+        primeFn(transform.ext);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lab.transform.retrieveFile" id="apidoc.element.lab.transform.retrieveFile">
+        function <span class="apidocSignatureSpan">lab.transform.</span>retrieveFile
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">retrieveFile = function (path) {
+
+    const cwd = process.cwd();
+    const cacheKey = path.indexOf(cwd) === 0 ? path.substr(cwd.length + 1) : path;
+    if (internals.fileCache[cacheKey]) {
+        return internals.fileCache[cacheKey];
+    }
+
+    let contents = null;
+    try {
+        contents = Fs.readFileSync(path, 'utf8');
+    }
+    catch (e) {
+        contents = null;
+    }
+
+    internals.fileCache[path] = contents;
+
+    return contents;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lab.utils" id="apidoc.module.lab.utils">module lab.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lab.utils.applyOptions" id="apidoc.element.lab.utils.applyOptions">
+        function <span class="apidocSignatureSpan">lab.utils.</span>applyOptions
+        <span class="apidocSignatureSpan">(parent, child)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyOptions = function (parent, child) {
+
+    Object.keys(child).forEach((key) =&gt; {
+
+        parent[key] = child[key];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lab.utils.mergeOptions" id="apidoc.element.lab.utils.mergeOptions">
+        function <span class="apidocSignatureSpan">lab.utils.</span>mergeOptions
+        <span class="apidocSignatureSpan">(parent, child, ignore)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mergeOptions = function (parent, child, ignore) {
+
+    ignore = ignore || [];
+    const options = {};
+
+    Object.keys(parent || {}).forEach((key) =&gt; {
+
+        if (ignore.indexOf(key) === -1) {
+            options[key] = parent[key];
+        }
+    });
+
+    Object.keys(child || {}).forEach((key) =&gt; {
+
+        options[key] = child[key];
+    });
+
+    return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    'lint-errors-threshold': 0,
+    'lint-warnings-threshold': 0
+};
+
+
+exports.report = function (scripts, options, callback) {
+
+    const settings = Utils.<span class="apidocCodeKeywordSpan">mergeOptions</span>(internals.defaults, options);
+    settings.environment = settings.environment.trim();
+    const reporter = Reporters.generate(settings);
+
+    const executeScripts = function (next) {
+
+exports.execute(scripts, settings, reporter, (err, result) =&gt; {
+    // Can only be (and is) covererd via CLI tests
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
